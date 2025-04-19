@@ -1,0 +1,33 @@
+name: Deploy Static Site
+
+on:
+  push:
+    branches:
+      - master  # 监听 master 分支的 push 事件
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # 使用最新版 Ubuntu 系统
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          submodules: true  # 如果使用 Git 子模块（如 Hugo 主题），需启用
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.146.7'  # 指定 Hugo 版本
+          extended: true  # 是否使用扩展版（按需）
+
+      - name: Build Site
+        run: hugo --minify  # 构建命令，生成静态文件到 public/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 自动使用 GitHub Token
+          publish_dir: ./public  # 构建输出目录
+          # 如果部署到其他分支，修改以下配置：
+          # publish_branch: gh-pages  # 默认是 gh-pages 分支
