@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://c.bennylab.xyz/</loc>
-    <lastmod>2025-04-19T21:23:52+08:00</lastmod>
-  </url><url>
-    <loc>https://c.bennylab.xyz/posts/</loc>
-    <lastmod>2025-04-19T21:23:52+08:00</lastmod>
-  </url><url>
-    <loc>https://c.bennylab.xyz/categories/</loc>
-  </url><url>
-    <loc>https://c.bennylab.xyz/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
+    
+      <lastmod>2025-04-19T21:23:52+08:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>
